@@ -52,15 +52,16 @@
           </ul>
           <form class="d-flex" role="search">
             <input
+              id="recomendationInput"
               class="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success me-2" type="submit">
+            <button id="btnSearch" class="btn btn-outline-success me-2">
               Search
             </button>
-            <button class="btn btn-outline-success" type="submit">Clear</button>
+            <button id="btnClear" class="btn btn-outline-success">Clear</button>
           </form>
         </div>
       </div>
@@ -115,6 +116,9 @@
           <p class="lead mb-0">
             <a href="#" class="text-white fw-bold">Book now</a>
           </p>
+        </div>
+        <div class="col-sm-5">
+          <div id="result"></div>
         </div>
       </div>
     </main>
