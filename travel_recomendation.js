@@ -3,35 +3,43 @@ const btnClear = document.getElementById("btnClear");
 const resultDiv = document.getElementById("result");
 
 function searchRecomendation() {
-    const input = document.getElementById("recomendationInput").value.toLowerCase();
-    resultDiv.innerHTML = "";
+  const input = document
+    .getElementById("recomendationInput")
+    .value.toLowerCase();
+  resultDiv.innerHTML = "";
 
-    fetch("./travel_recomendation.json")
-        .then((response) => response.json())
-        .then((data) => {
-            const { countries, temples, beaches } = data
-            const findCity = countries.find((item) => item.name.toLowerCase() === input)
+  fetch("./travel_recomendation.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const { countries, temples, beaches } = data;
+      const findCity = countries.find(
+        (item) => item.name.toLowerCase() === input
+      );
 
-            if (findCity) {
-                const { cities } = findCity
-                displayCities(cities)
-            } else if (input === "temples" | "temple") {
-                displayTemples(temples)
-            } else if (input === "beaches" | "beach") {
-                displayBeaches(beaches)
-            } else {
-                resultDiv.innerHTML = "Result not found.";
-            }
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-            resultDiv.innerHTML = "An error occurred while fetching data.";
-        });
+      if (findCity) {
+        const { cities } = findCity;
+        displayCities(cities);
+      } else if ((input === "temples") | (input === "temple")) {
+        displayTemples(temples);
+      } else if ((input === "beaches") | (input === "beach")) {
+        displayBeaches(beaches);
+      } else {
+        resultDiv.innerHTML = `
+            <div class="alert alert-warning" role="alert">
+                Result not found!
+            </div>`;
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      resultDiv.innerHTML = "An error occurred while fetching data.";
+    });
 }
 btnSearch.addEventListener("click", searchRecomendation);
 
 function displayCities(citiesData) {
-    const cities = citiesData.map((city) => `
+  const cities = citiesData.map(
+    (city) => `
         <div class="card" style="width: 18rem;">
             <img src="${city.imageUrl}" class="card-img-top" alt="${city.name}">
             <div class="card-body">
@@ -41,12 +49,13 @@ function displayCities(citiesData) {
             </div>
         </div>
         `
-    )
-    resultDiv.innerHTML = cities
+  );
+  resultDiv.innerHTML = cities;
 }
 
 function displayTemples(templesData) {
-    const temples = templesData.map((temple) => `
+  const temples = templesData.map(
+    (temple) => `
         <div class="card" style="width: 18rem;">
             <img src="${temple.imageUrl}" class="card-img-top" alt="${temple.name}">
             <div class="card-body">
@@ -56,12 +65,13 @@ function displayTemples(templesData) {
             </div>
         </div>
         `
-    )
-    resultDiv.innerHTML = temples
+  );
+  resultDiv.innerHTML = temples;
 }
 
 function displayBeaches(beachesData) {
-    const beaches = beachesData.map((beach) => `
+  const beaches = beachesData.map(
+    (beach) => `
         <div class="card" style="width: 18rem;">
             <img src="${beach.imageUrl}" class="card-img-top" alt="${beach.name}">
             <div class="card-body">
@@ -71,6 +81,11 @@ function displayBeaches(beachesData) {
             </div>
         </div>
         `
-    )
-    resultDiv.innerHTML = beaches
+  );
+  resultDiv.innerHTML = beaches;
 }
+
+function clearResults() {
+  resultDiv.innerHTML = [];
+}
+btnClear.addEventListener("click", clearResults);
