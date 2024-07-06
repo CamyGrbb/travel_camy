@@ -47,9 +47,7 @@
               <a class="nav-link" href="./about_us.html">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./contact_us.contact.html"
-                >Contact Us</a
-              >
+              <a class="nav-link" href="./contact_us.html">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -94,53 +92,29 @@
             </li>
           </ul>
         </div>
-        <div class="col-sm-11 text-white">
-          <h1 class="display-1 fst-italic">About Us</h1>
-          <p class="lead my-3">
-            TravelCamy's mission is to open the doors of the world to you. A
-            platform that brings together the best activities on the planet so
-            that have everything in one place.
-          </p>
-          <div class="row">
-            <div class="col-sm-3">
-              <h1 class="display-1 fst-italic">Our Team</h1>
+        <div class="col-sm-5 text-white">
+          <h1 class="display-1 fst-italic">Contact Us</h1>
+        </div>
+        <div class="col-sm-6 text-white">
+          <form>
+            <div class="mb-3">
+              <label for="inputName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="inputName" />
             </div>
-            <div class="col-sm-3 mb-3 mb-sm-0">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <i class="bi bi-person-workspace"></i>Cesar Gonzalez
-                  </h5>
-                  <p class="card-text">
-                    Information Systems Analyst and Developer
-                  </p>
-                  <a href="#" class="btn btn-primary">More Info</a>
-                </div>
-              </div>
+            <div class="mb-3">
+              <label for="inputEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="inputEmail" />
             </div>
-            <div class="col-sm-3 mb-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <i class="bi bi-person-workspace"></i>Yadira Bedoya
-                  </h5>
-                  <p class="card-text">Agricultural Engineer</p>
-                  <a href="#" class="btn btn-primary">More Info</a>
-                </div>
-              </div>
+            <div class="mb-3">
+              <label for="messageText" class="form-label">Message</label>
+              <textarea
+                class="form-control"
+                id="messageText"
+                rows="3"
+              ></textarea>
             </div>
-            <div class="col-sm-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <i class="bi bi-person-workspace"></i>Edilma Bedoya
-                  </h5>
-                  <p class="card-text">Services</p>
-                  <a href="#" class="btn btn-primary">More Info</a>
-                </div>
-              </div>
-            </div>
-          </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
       </div>
     </main>
