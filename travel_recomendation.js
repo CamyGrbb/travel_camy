@@ -10,9 +10,10 @@ function searchRecomendation() {
         .then((response) => response.json())
         .then((data) => {
             const { countries, temples, beaches } = data
-            const { cities } = countries.find((item) => item.name.toLowerCase() === input)
+            const findCity = countries.find((item) => item.name.toLowerCase() === input)
 
-            if (cities !== undefined) {
+            if (findCity) {
+                const { cities } = findCity
                 displayCities(cities)
             } else if (input === "temples" | "temple") {
                 displayTemples(temples)
