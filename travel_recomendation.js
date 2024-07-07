@@ -35,7 +35,7 @@ function searchRecomendation() {
 }
 
 function displayResults(resultsData) {
-  const cities = resultsData.map(
+  const results = resultsData.map(
     (result) => `
         <div class="card">
             <img src="${result.imageUrl}" class="card-img-top" alt="${result.name}">
@@ -47,7 +47,7 @@ function displayResults(resultsData) {
         </div>
         `
   );
-  resultDiv.innerHTML = cities;
+  resultDiv.innerHTML = results;
 }
 
 function clearResults() {
