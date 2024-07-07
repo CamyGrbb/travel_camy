@@ -1,5 +1,3 @@
-const btnSearch = document.getElementById("btnSearch");
-const btnClear = document.getElementById("btnClear");
 const resultDiv = document.getElementById("result");
 
 function searchRecomendation() {
@@ -35,7 +33,6 @@ function searchRecomendation() {
       resultDiv.innerHTML = "An error occurred while fetching data.";
     });
 }
-btnSearch.addEventListener("click", searchRecomendation);
 
 function displayCities(citiesData) {
   const cities = citiesData.map(
@@ -88,4 +85,15 @@ function displayBeaches(beachesData) {
 function clearResults() {
   resultDiv.innerHTML = [];
 }
-btnClear.addEventListener("click", clearResults);
+
+function submitMessage() {
+  const name = document.getElementById("inputName").value;
+  const email = document.getElementById("inputEmail").value;
+  const message = document.getElementById("messageText").value;
+
+  if (name && email && message) {
+    alert("Your message has been sent");
+  } else {
+    alert("Please fill in all fields correctly.");
+  }
+}
