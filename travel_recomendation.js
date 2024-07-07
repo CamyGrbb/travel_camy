@@ -16,11 +16,11 @@ function searchRecomendation() {
 
       if (findCity) {
         const { cities } = findCity;
-        displayCities(cities);
+        displayResults(cities);
       } else if ((input === "temples") | (input === "temple")) {
-        displayTemples(temples);
+        displayResults(temples);
       } else if ((input === "beaches") | (input === "beach")) {
-        displayBeaches(beaches);
+        displayResults(beaches);
       } else {
         resultDiv.innerHTML = `
             <div class="alert alert-warning" role="alert">
@@ -34,52 +34,20 @@ function searchRecomendation() {
     });
 }
 
-function displayCities(citiesData) {
-  const cities = citiesData.map(
-    (city) => `
+function displayResults(resultsData) {
+  const cities = resultsData.map(
+    (result) => `
         <div class="card">
-            <img src="${city.imageUrl}" class="card-img-top" alt="${city.name}">
+            <img src="${result.imageUrl}" class="card-img-top" alt="${result.name}">
             <div class="card-body">
-                <h5 class="card-title">${city.name}</h5>
-                <p class="card-text">${city.name}</p>
+                <h5 class="card-title">${result.name}</h5>
+                <p class="card-text">${result.name}</p>
                 <a href="#" class="btn btn-primary">Info</a>
             </div>
         </div>
         `
   );
   resultDiv.innerHTML = cities;
-}
-
-function displayTemples(templesData) {
-  const temples = templesData.map(
-    (temple) => `
-        <div class="card">
-            <img src="${temple.imageUrl}" class="card-img-top" alt="${temple.name}">
-            <div class="card-body">
-                <h5 class="card-title">${temple.name}</h5>
-                <p class="card-text">${temple.name}</p>
-                <a href="#" class="btn btn-primary">Info</a>
-            </div>
-        </div>
-        `
-  );
-  resultDiv.innerHTML = temples;
-}
-
-function displayBeaches(beachesData) {
-  const beaches = beachesData.map(
-    (beach) => `
-        <div class="card">
-            <img src="${beach.imageUrl}" class="card-img-top" alt="${beach.name}">
-            <div class="card-body">
-                <h5 class="card-title">${beach.name}</h5>
-                <p class="card-text">${beach.name}</p>
-                <a href="#" class="btn btn-primary">Info</a>
-            </div>
-        </div>
-        `
-  );
-  resultDiv.innerHTML = beaches;
 }
 
 function clearResults() {
