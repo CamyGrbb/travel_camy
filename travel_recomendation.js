@@ -37,7 +37,7 @@ function searchRecomendation() {
 function displayCities(citiesData) {
   const cities = citiesData.map(
     (city) => `
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <img src="${city.imageUrl}" class="card-img-top" alt="${city.name}">
             <div class="card-body">
                 <h5 class="card-title">${city.name}</h5>
@@ -53,7 +53,7 @@ function displayCities(citiesData) {
 function displayTemples(templesData) {
   const temples = templesData.map(
     (temple) => `
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <img src="${temple.imageUrl}" class="card-img-top" alt="${temple.name}">
             <div class="card-body">
                 <h5 class="card-title">${temple.name}</h5>
@@ -69,7 +69,7 @@ function displayTemples(templesData) {
 function displayBeaches(beachesData) {
   const beaches = beachesData.map(
     (beach) => `
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <img src="${beach.imageUrl}" class="card-img-top" alt="${beach.name}">
             <div class="card-body">
                 <h5 class="card-title">${beach.name}</h5>
